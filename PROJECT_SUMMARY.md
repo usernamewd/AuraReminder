@@ -90,6 +90,9 @@ AuraReminder/
 - **Fixed YAML schema validation**: Corrected boolean parameters in android-setup-android
   - `accept-android-sdk-licenses: 'yes'` → `accept-android-sdk-licenses: true`
   - `log-accepted-android-sdk-licenses: 'true'` → `log-accepted-android-sdk-licenses: true`
+- **Fixed Gradle wrapper issue**: Resolved ClassNotFoundException for Gradle builds
+  - Added missing `gradle-wrapper.jar` (v8.2) to `gradle/wrapper/` directory
+  - Updated .gitignore with comment explaining intentional inclusion for CI/CD
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
