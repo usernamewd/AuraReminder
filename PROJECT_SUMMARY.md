@@ -132,6 +132,10 @@ AuraReminder/
   - Deleted beep_sound_info.txt placeholder file from res/raw/ directory
   - Updated documentation to reflect haptic-only feedback (vibration only)
   - Simplified codebase by removing audio-related dependencies and code paths
+- **Fixed missing ui-test-junit4 version**: Resolved build failure for dependency resolution
+  - Added missing version number to androidx.compose.ui:ui-test-junit4:1.5.4
+  - Removed duplicate androidx.core:core-ktx:1.12.0 dependency
+  - This resolved: Could not find androidx.compose.ui:ui-test-junit4 error
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
