@@ -87,6 +87,9 @@ AuraReminder/
   - `actions/setup-java@v3` → `actions/setup-java@v4`
   - `actions/cache@v3` → `actions/cache@v4`
   - `actions/upload-artifact@v3` → `actions/upload-artifact@v4`
+- **Fixed YAML schema validation**: Corrected boolean parameters in android-setup-android
+  - `accept-android-sdk-licenses: 'yes'` → `accept-android-sdk-licenses: true`
+  - `log-accepted-android-sdk-licenses: 'true'` → `log-accepted-android-sdk-licenses: true`
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
