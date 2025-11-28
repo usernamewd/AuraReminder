@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Warm Magenta/Purple -->
+    <color name="primary_300">#F3B6E0</color>
+    <color name="primary_500">#D946EF</color>
+    <color name="primary_700">#A21CAF</color>
+
+    <!-- Neutral Colors - Warm, Tinted Grays -->
+    <color name="neutral_100">#FFF9FB</color>
+    <color name="neutral_400">#8F888C</color>
+    <color name="neutral_800">#312E30</color>
+    <color name="neutral_900">#1B181A</color>
+
+    <!-- Semantic Colors -->
+    <color name="success">#4ADE80</color>
+    <color name="warning">#FACC15</color>
+    <color name="error">#F75555</color>
+
+    <!-- Glass Effect Colors -->
+    <color name="glass_bg_light">#66FFFFFF</color>
+    <color name="glass_bg_dark">#99312E30</color>
+    
+    <!-- Background Gradients -->
+    <color name="gradient_start">#2F243A</color>
+    <color name="gradient_end">#1B181A</color>
+</resources>

@@ -1,0 +1,2 @@
+# Placeholder for Poppins Regular font
+# This file should contain the actual Poppins-Regular.ttf font data

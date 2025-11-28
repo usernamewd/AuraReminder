@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AuraReminder</string>
+    <string name="reminder_text">Пора собираться к бабушке Тане и звонить ей!!!</string>
+    <string name="arrive_button">Приехал к ней/еду</string>
+    <string name="decline_button">Не хочу ехать!!!</string>
+    <string name="result_text">Остановлено.</string>
+    <string name="no_reminder_text">Сегодня нет напоминания\nНажмите кнопку календаря для установки</string>
+    <string name="calendar_title">Выберите день напоминания</string>
+    <string name="calendar_button_content_description">Календарь</string>
+</resources>
