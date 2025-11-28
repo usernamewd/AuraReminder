@@ -147,6 +147,11 @@ AuraReminder/
     - Longer animation duration (2s) for more satisfying effect
   - **Better User Feedback**: Improved toast messages for date selection
   - **Color System Update**: All resources updated to use blue/white theme colors
+- **Fixed listener access compilation error**: Resolved Kotlin compilation failure
+  - Changed `listener` property from private to public in CalendarSelectorDialog.kt
+  - MainActivity.kt was unable to access the private listener property for date selection callbacks
+  - This resolved: "Cannot access 'listener': it is private in 'CalendarSelectorDialog'" error
+  - Both debug and release builds now compile successfully
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
