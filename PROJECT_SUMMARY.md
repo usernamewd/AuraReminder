@@ -97,6 +97,10 @@ AuraReminder/
   - Added version numbers to androidx.compose dependencies (ui:1.5.4, material3:1.1.2)
   - Changed ui-tooling-preview from implementation to debugImplementation
   - Fixed: Could not find androidx.compose.ui:ui-tooling, ui-test-manifest, ui-tooling-preview, material3, material-icons-extended
+- **Fixed font directory contamination**: Removed non-font files from Android font resources
+  - Moved README.md and poppins_regular.txt to docs/fonts/ directory
+  - Only fonts.xml remains in app/src/main/res/font/ directory
+  - Resolved: The file name must end with .xml, .ttf, .ttc or .otf error
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
