@@ -121,6 +121,11 @@ AuraReminder/
 - **Fixed malformed launcher icon**: Created proper PNG placeholder image
   - Replaced ASCII text file with actual 72x72 PNG image using app primary color
   - Removed duplicate ui-tooling debugImplementation entry
+- **Fixed Kotlin compilation errors**: Resolved syntax and resource reference errors
+  - Fixed incorrect insets.isVisible syntax in MainActivity.kt and ResultActivity.kt
+  - Changed to proper insets.isVisible(WindowInsetsCompat.Type.systemBars()) call
+  - Added resource existence check for missing beep_sound.mp3 file
+  - Implemented graceful fallback when beep sound resource is not available
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
