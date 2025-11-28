@@ -114,6 +114,13 @@ AuraReminder/
   - Removed android:roundIcon attribute from AndroidManifest.xml
   - ic_launcher_round resource files don't exist in mipmap directories
   - App now uses standard ic_launcher icon for both regular and round displays
+- **Fixed Kotlin/Compose compatibility**: Resolved version mismatch error
+  - Updated Kotlin version from 1.9.10 to 1.9.20 in build.gradle
+  - Compose 1.5.4 requires Kotlin 1.9.20+ for compatibility
+  - Removed duplicate debugImplementation dependencies to avoid conflicts
+- **Fixed malformed launcher icon**: Created proper PNG placeholder image
+  - Replaced ASCII text file with actual 72x72 PNG image using app primary color
+  - Removed duplicate ui-tooling debugImplementation entry
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
