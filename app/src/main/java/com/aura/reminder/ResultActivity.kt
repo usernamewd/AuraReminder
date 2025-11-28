@@ -35,7 +35,6 @@ class ResultActivity : AppCompatActivity() {
     
     private fun enableEdgeToEdge() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, insets ->
-            val systemBarsVisible = insets.isVisible
             val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             
             // Set padding for the root view

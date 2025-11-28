@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
     
     private fun enableEdgeToEdge() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, insets ->
-            val systemBarsVisible = insets.isVisible
             val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             
             // Set padding for the root view
@@ -127,12 +126,19 @@ class MainActivity : AppCompatActivity() {
     
     private fun playBeepSound() {
         try {
-            mediaPlayer = MediaPlayer.create(this, R.raw.beep_sound)
-            mediaPlayer?.setOnCompletionListener { 
-                it.release()
-                mediaPlayer = null
+            // Check if beep_sound resource exists
+            val soundResourceId = resources.getIdentifier("beep_sound", "raw", packageName)
+            if (soundResourceId != 0) {
+                mediaPlayer = MediaPlayer.create(this, soundResourceId)
+                mediaPlayer?.setOnCompletionListener { 
+                    it.release()
+                    mediaPlayer = null
+                }
+                mediaPlayer?.start()
+            } else {
+                // Resource doesn't exist, handle gracefully
+                Toast.makeText(this, "Звуковой файл недоступен", Toast.LENGTH_SHORT).show()
             }
-            mediaPlayer?.start()
         } catch (e: Exception) {
             Toast.makeText(this, "Не удалось воспроизвести звук", Toast.LENGTH_SHORT).show()
         }
