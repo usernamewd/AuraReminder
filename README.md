@@ -7,7 +7,7 @@ A beautiful Android reminder app built with Material Three design and liquid gla
 ### Core Functionality
 - **Day-by-Day Calendar Selection**: Choose specific dates for reminders using an intuitive calendar interface
 - **Smart Reminder Detection**: Automatically detects when you open the app on selected reminder days
-- **Audio & Haptic Feedback**: Plays beep sound and provides vibration feedback for reminders
+- **Haptic Feedback**: Provides vibration feedback for reminders
 - **Dual Action Responses**: Choose between "Приехал к ней/еду" (Arrived/Going) or "Не хочу ехать!!!" (Don't want to go)
 - **Result Screen**: Clean "Остановлено." (Stopped) screen with particle animation effects
 

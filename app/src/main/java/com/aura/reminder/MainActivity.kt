@@ -2,7 +2,7 @@ package com.aura.reminder
 
 import android.content.Context
 import android.content.Intent
-import android.media.MediaPlayer
+
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -18,7 +18,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private var mediaPlayer: MediaPlayer? = null
+
     private var vibrator: Vibrator? = null
     
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         if (reminderDays.contains(today)) {
             // Today is a reminder day
             showReminderAlert()
-            playBeepSound()
+
             performVibration()
         } else {
             // No reminder today
@@ -124,25 +124,7 @@ class MainActivity : AppCompatActivity() {
         binding.noReminderText.visibility = View.GONE
     }
     
-    private fun playBeepSound() {
-        try {
-            // Check if beep_sound resource exists
-            val soundResourceId = resources.getIdentifier("beep_sound", "raw", packageName)
-            if (soundResourceId != 0) {
-                mediaPlayer = MediaPlayer.create(this, soundResourceId)
-                mediaPlayer?.setOnCompletionListener { 
-                    it.release()
-                    mediaPlayer = null
-                }
-                mediaPlayer?.start()
-            } else {
-                // Resource doesn't exist, handle gracefully
-                Toast.makeText(this, "Звуковой файл недоступен", Toast.LENGTH_SHORT).show()
-            }
-        } catch (e: Exception) {
-            Toast.makeText(this, "Не удалось воспроизвести звук", Toast.LENGTH_SHORT).show()
-        }
-    }
+
     
     private fun performVibration() {
         vibrator?.let { vibrator ->
@@ -168,7 +150,6 @@ class MainActivity : AppCompatActivity() {
     
     override fun onDestroy() {
         super.onDestroy()
-        mediaPlayer?.release()
-        mediaPlayer = null
+
     }
 }

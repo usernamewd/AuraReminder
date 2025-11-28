@@ -7,7 +7,7 @@ I've successfully created a comprehensive Android reminder app called **AuraRemi
 ### ✅ Core Features Implemented
 - **📅 Day-by-Day Calendar Selection**: Intuitive date picker for setting specific reminder days
 - **🔔 Smart Reminder Detection**: Automatically detects when app opens on selected days
-- **🔊 Audio & Haptic Feedback**: Beep sound + vibration for reminder alerts
+- **📳 Haptic Feedback**: Vibration feedback for reminder alerts
 - **🇷🇺 Russian Interface**: "Пора собираться к бабушке Тане и звонить ей!!!"
 - **🎯 Dual Response Actions**: 
   - "Приехал к ней/еду" (Arrived/Going)
@@ -126,6 +126,12 @@ AuraReminder/
   - Changed to proper insets.isVisible(WindowInsetsCompat.Type.systemBars()) call
   - Added resource existence check for missing beep_sound.mp3 file
   - Implemented graceful fallback when beep sound resource is not available
+- **Removed beep sound functionality**: Eliminated beep sound feature completely from codebase
+  - Removed MediaPlayer import, declaration, and cleanup code from MainActivity.kt
+  - Removed playBeepSound() function and its call from checkReminderDay()
+  - Deleted beep_sound_info.txt placeholder file from res/raw/ directory
+  - Updated documentation to reflect haptic-only feedback (vibration only)
+  - Simplified codebase by removing audio-related dependencies and code paths
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
@@ -155,7 +161,7 @@ AuraReminder/
 2. **Calendar Access**: Tap floating action button to open date picker
 3. **Date Selection**: Choose specific dates for reminders
 4. **Reminder Day**: App detects reminder day on opening
-5. **Alert Display**: Shows reminder card with Russian text + beep + vibration
+5. **Alert Display**: Shows reminder card with Russian text + vibration
 6. **User Choice**: Select arrival or decline option
 7. **Result**: Both options lead to "Остановлено." screen with particle animation
 
@@ -183,7 +189,7 @@ AuraReminder/
 ### ✅ All Requirements Met
 - ✅ Day-by-day calendar selector for reminder days
 - ✅ Smart detection when opening app on selected days
-- ✅ Beep sound + vibration feedback
+- ✅ Haptic feedback
 - ✅ Russian text interface
 - ✅ Two response buttons with result screen
 - ✅ Material Three expressive design
@@ -211,7 +217,7 @@ The complete Android app project is now available with:
 
 ## 📋 Next Steps for Development
 
-1. **Add Real Beep Sound**: Place audio file in `app/src/main/res/raw/`
+1. **Add Audio Feature**: Optional beep sound can be added by placing audio file in `app/src/main/res/raw/`
 2. **Create App Icons**: Replace placeholder icons with actual launcher icons
 3. **Add Unit Tests**: Expand test coverage for business logic
 4. **Configure Play Store**: Set up Google Play Console for distribution
