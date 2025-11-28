@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             startResultActivity("Приехал к бабушке Тане!")
         }
         
-        binding.declineButton.setOnOnClickListener {
+        binding.declineButton.setOnClickListener {
             startResultActivity("Не хочу ехать!")
         }
     }

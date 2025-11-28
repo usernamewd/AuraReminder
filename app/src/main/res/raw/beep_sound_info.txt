@@ -1,0 +1,9 @@
+# This is a placeholder for a beep sound file
+# In a real implementation, you would place a .mp3 or .ogg file here
+# For demo purposes, the app handles missing file gracefully
+# 
+# To add a real beep sound:
+# 1. Download a short beep sound (0.5-1 second)
+# 2. Save it as beep_sound.mp3 or beep_sound.ogg
+# 3. Place it in this directory (app/src/main/res/raw/)
+# 4. The app will automatically use it when available
