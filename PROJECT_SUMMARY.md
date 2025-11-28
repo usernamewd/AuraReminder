@@ -110,6 +110,10 @@ AuraReminder/
   - Deleted docs/fonts/README.md and docs/fonts/poppins_regular.txt completely
   - Created new comprehensive documentation in docs/fonts-info.md
   - Font directory now contains ONLY fonts.xml with no documentation files
+- **Fixed missing launcher icon error**: Resolved AAPT error for missing mipmap/ic_launcher_round
+  - Removed android:roundIcon attribute from AndroidManifest.xml
+  - ic_launcher_round resource files don't exist in mipmap directories
+  - App now uses standard ic_launcher icon for both regular and round displays
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
