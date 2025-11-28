@@ -67,7 +67,7 @@ AuraReminder/
 
 ### GitHub Actions Workflow Features
 - **Latest Ubuntu Runner**: `ubuntu-latest` for consistent builds
-- **JDK 17 Setup**: `actions/setup-java@v3` with Temurin distribution
+- **JDK 17 Setup**: `actions/setup-java@v4` with Temurin distribution
 - **Android SDK Setup**: `android-actions/setup-android@v3` for automated SDK installation
 - **License Acceptance**: Automatically accepts Android SDK licenses
 - **Build Process**: `./gradlew --no-daemon build` for reliable builds
@@ -81,6 +81,14 @@ AuraReminder/
 - ✅ Comprehensive build and test pipeline
 - ✅ No warnings or deprecated syntax
 - ✅ Optimized for performance with caching
+
+### 🔧 Recent Workflow Updates (November 2025)
+- **Fixed deprecation warnings**: Updated GitHub Actions from v3 to v4
+  - `actions/setup-java@v3` → `actions/setup-java@v4`
+  - `actions/cache@v3` → `actions/cache@v4`
+  - `actions/upload-artifact@v3` → `actions/upload-artifact@v4`
+- **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
+- **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
 ## 🎨 UI/UX Design Implementation
 
