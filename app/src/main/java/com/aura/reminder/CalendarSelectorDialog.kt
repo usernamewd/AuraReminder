@@ -22,7 +22,7 @@ class CalendarSelectorDialog : DialogFragment() {
         fun onImmediateReminderCheck(date: String)
     }
     
-    private var listener: OnDateSelectedListener? = null
+    var listener: OnDateSelectedListener? = null
     
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         _binding = DialogCalendarSelectorBinding.inflate(layoutInflater)
