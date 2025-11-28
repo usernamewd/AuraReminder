@@ -313,6 +313,7 @@
 # Gradle
 **/.gradle/
 **/build/
+# Note: gradle-wrapper.jar is intentionally included for CI/CD compatibility
 **/.gradletasknamecache
 **/gradle-app.setting
 
