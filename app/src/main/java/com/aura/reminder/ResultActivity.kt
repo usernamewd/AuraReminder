@@ -61,8 +61,8 @@ class ResultActivity : AppCompatActivity() {
     }
     
     private fun startParticleAnimation() {
-        // Create particle effect by animating multiple views
-        for (i in 0 until 12) {
+        // Create more particles for a better distributed effect
+        for (i in 0 until 20) {
             createParticleView(i)
         }
     }
@@ -72,27 +72,52 @@ class ResultActivity : AppCompatActivity() {
         particle.setBackgroundResource(R.drawable.particle_background)
         
         val layoutParams = androidx.appcompat.widget.LinearLayoutCompat.LayoutParams(
-            12, 12
+            18, 18
         )
         particle.layoutParams = layoutParams
         
-        // Random starting position
-        val startX = (binding.root.width / 2) + (Math.random() * 100 - 50).toInt()
-        val startY = (binding.root.height / 2) + (Math.random() * 100 - 50).toInt()
+        // Distribute particles across the entire screen more evenly
+        val screenWidth = binding.root.width
+        val screenHeight = binding.root.height
+        
+        // Use grid-like distribution for better coverage
+        val gridCols = 4
+        val gridRows = 3
+        val padding = 50
+        
+        val col = index % gridCols
+        val row = index / gridCols
+        
+        val cellWidth = (screenWidth - 2 * padding) / gridCols
+        val cellHeight = (screenHeight - 2 * padding) / gridRows
+        
+        val startX = (padding + col * cellWidth + Math.random() * cellWidth * 0.8).toInt()
+        val startY = (padding + row * cellHeight + Math.random() * cellHeight * 0.8).toInt()
+        
         particle.x = startX.toFloat()
         particle.y = startY.toFloat()
         
         binding.root.addView(particle)
         
-        // Animate particle
-        val anim = AnimationUtils.loadAnimation(this, R.anim.particle_animation)
-        anim.startOffset = (index * 100).toLong()
+        // Select random animation from available options
+        val animationIds = intArrayOf(
+            R.anim.particle_animation,
+            R.anim.particle_up_left,
+            R.anim.particle_down_right,
+            R.anim.particle_down_left
+        )
+        
+        val selectedAnim = animationIds[(Math.random() * animationIds.size).toInt()]
+        val anim = AnimationUtils.loadAnimation(this, selectedAnim)
+        
+        // Add random start delay for more natural effect
+        anim.startOffset = (index * 200 + Math.random() * 800).toLong()
         
         anim.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {}
             
             override fun onAnimationEnd(animation: Animation?) {
-                // Remove particle after animation
+                // Remove particle after animation completes
                 binding.root.removeView(particle)
             }
             

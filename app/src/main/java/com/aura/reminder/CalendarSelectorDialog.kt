@@ -19,6 +19,7 @@ class CalendarSelectorDialog : DialogFragment() {
     
     interface OnDateSelectedListener {
         fun onDateSelected(date: String)
+        fun onImmediateReminderCheck(date: String)
     }
     
     private var listener: OnDateSelectedListener? = null
@@ -32,8 +33,20 @@ class CalendarSelectorDialog : DialogFragment() {
             { _, year, month, day ->
                 val selectedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                     .format(Date(year - 1900, month, day))
+                
+                // Save the reminder date
                 saveReminderDate(selectedDate)
-                listener?.onDateSelected(selectedDate)
+                
+                // Check if selected date is today
+                val today = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+                if (selectedDate == today) {
+                    // If it's today, trigger immediate reminder check
+                    listener?.onImmediateReminderCheck(selectedDate)
+                } else {
+                    // Otherwise just notify that date was selected
+                    listener?.onDateSelected(selectedDate)
+                }
+                
                 dismiss()
             },
             calendar.get(Calendar.YEAR),

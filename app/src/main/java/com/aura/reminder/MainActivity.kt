@@ -138,6 +138,22 @@ class MainActivity : AppCompatActivity() {
     
     private fun showCalendarSelector() {
         val calendarDialog = CalendarSelectorDialog()
+        
+        // Set up the listener for date selection
+        calendarDialog.listener = object : CalendarSelectorDialog.OnDateSelectedListener {
+            override fun onDateSelected(date: String) {
+                // Regular date selection - just show confirmation
+                Toast.makeText(this@MainActivity, "Напоминание установлено на $date", Toast.LENGTH_SHORT).show()
+            }
+            
+            override fun onImmediateReminderCheck(date: String) {
+                // If it's today, immediately show the reminder
+                Toast.makeText(this@MainActivity, "Напоминание установлено на сегодня!", Toast.LENGTH_SHORT).show()
+                showReminderAlert()
+                performVibration()
+            }
+        }
+        
         calendarDialog.show(supportFragmentManager, "calendar_selector")
     }
     
