@@ -101,6 +101,10 @@ AuraReminder/
   - Moved README.md and poppins_regular.txt to docs/fonts/ directory
   - Only fonts.xml remains in app/src/main/res/font/ directory
   - Resolved: The file name must end with .xml, .ttf, .ttc or .otf error
+- **Resolved GitHub Actions cache issue**: Forced fresh repository checkout
+  - Added/removed temporary file to trigger cache invalidation
+  - GitHub Actions was using cached version of old font directory state
+  - Fresh repository checkout now uses corrected file structure
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
