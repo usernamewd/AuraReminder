@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<font-family xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- System font fallbacks for compatibility -->
-    <font android:fontStyle="normal" android:fontWeight="400" android:font="@android:font/roboto_regular" />
-</font-family>
