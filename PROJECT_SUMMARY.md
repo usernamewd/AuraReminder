@@ -105,6 +105,11 @@ AuraReminder/
   - Added/removed temporary file to trigger cache invalidation
   - GitHub Actions was using cached version of old font directory state
   - Fresh repository checkout now uses corrected file structure
+- **Final cleanup of README.md references**: Completely eliminated all README.md files that could interfere
+  - Used `git rm --cached` to remove any git tracking of README.md
+  - Deleted docs/fonts/README.md and docs/fonts/poppins_regular.txt completely
+  - Created new comprehensive documentation in docs/fonts-info.md
+  - Font directory now contains ONLY fonts.xml with no documentation files
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
