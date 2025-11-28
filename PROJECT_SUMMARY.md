@@ -93,6 +93,10 @@ AuraReminder/
 - **Fixed Gradle wrapper issue**: Resolved ClassNotFoundException for Gradle builds
   - Added missing `gradle-wrapper.jar` (v8.2) to `gradle/wrapper/` directory
   - Updated .gitignore with comment explaining intentional inclusion for CI/CD
+- **Fixed dependency resolution**: Resolved missing Compose dependency versions
+  - Added version numbers to androidx.compose dependencies (ui:1.5.4, material3:1.1.2)
+  - Changed ui-tooling-preview from implementation to debugImplementation
+  - Fixed: Could not find androidx.compose.ui:ui-tooling, ui-test-manifest, ui-tooling-preview, material3, material-icons-extended
 - **Resolved compatibility**: Ensures workflow runs without errors on latest GitHub Actions infrastructure
 - **Future-proof**: Compatible with GitHub Actions deprecation timeline
 
